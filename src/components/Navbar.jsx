@@ -129,7 +129,7 @@ export default function Navbar({ activeSection }) {
                                 <Linkedin size={18} />
                             </motion.a>
                             <motion.a
-                                href="https://leetcode.com/your-username"
+                                href="https://leetcode.com/u/iman6406/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-300 transition-all duration-300 hover:scale-110 hover:border-amber-400/50 hover:bg-amber-500/10 hover:text-amber-300"

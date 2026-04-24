@@ -71,21 +71,7 @@ export default function Projects() {
         </h2>
       </div>
       {/* Filters */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveFilter(category)}
-            className={`px-4 py-2 rounded-full text-sm ${
-              activeFilter === category
-                ? 'bg-gradient-to-r from-cyan-500 to-violet-500 text-white'
-                : 'bg-white/5 text-slate-300 border border-white/10'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+      
 
       {/* View Toggle */}
       <div className="flex gap-2 mb-6">

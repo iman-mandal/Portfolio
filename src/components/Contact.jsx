@@ -1,5 +1,3 @@
-'use client'
-
 import { Mail, MapPin, Github, Linkedin, Send } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
@@ -25,20 +23,43 @@ const itemVariants = {
 }
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ email: '', subject: '', message: '' })
+  const [formData, setFormData] = useState({
+    email: '',
+    subject: '',
+    message: '',
+  })
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(formData.subject || `Portfolio Contact - ${formData.email}`)
-    const body = encodeURIComponent(`Name: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent from portfolio contact form`)
-    window.location.href = `mailto:mandalim19@gmail.com?subject=${subject}&body=${body}`
-    alert('Opening your email client! Please send the message to reach me.')
-    setFormData({ email: '', subject: '', message: '' })
+
+    const templateParams = {
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    }
+
+    emailjs
+      .send(
+        'YOUR_SERVICE_ID',   // 🔴 replace
+        'YOUR_TEMPLATE_ID',  // 🔴 replace
+        templateParams,
+        'YOUR_PUBLIC_KEY'    // 🔴 replace
+      )
+      .then(
+        () => {
+          alert(' Message sent successfully!')
+          setFormData({ email: '', subject: '', message: '' })
+        },
+        (error) => {
+          console.error(error)
+          alert('Failed to send message. Try again.')
+        }
+      )
   }
 
   return (
@@ -63,7 +84,7 @@ export default function Contact() {
               Let&apos;s build something <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">great</span> together.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300">
-              I&apos;m available for freelance opportunities, internships, and collaborative development work.
+              I&apos;m available for internships, and collaborative development work.
             </p>
           </div>
 

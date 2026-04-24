@@ -13,14 +13,13 @@ export const projects = [
     ],
     tags: ["React", "Node.js", "MongoDB", "Express", "Tailwind"],
     category: "web",
-    github: "https://github.com/iman-mandal/habit-tracker",
-    live: "https://habit-tracker-demo.com",
-    linkedin: "jf7fihojopjh",
+    github: "https://github.com/iman-mandal/HABITUS",
+    linkedin: "https://www.linkedin.com/posts/iman-mandal-5945102b9_fullstackdeveloper-ai-reactjs-activity-7444071089695109120-jDsD?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAExtoEABwEqzegprDe2x0J77uRVeXjWDhp8&utm_campaign=copy_link",
     featured: true,
     stats: {
       githubStars: 0,
       forks: 0,
-      date: "2024"
+      date: "Dec 2025- Apr 2026"
     }
   },
   {
@@ -29,21 +28,21 @@ export const projects = [
     description: "A stunning portfolio website with glassmorphism design, smooth animations, and 3D elements. Built with modern web technologies.",
     features: [
       "Responsive design",
-      "Dark/Light mode",
+      "Dark mode",
       "3D animations",
       "Contact form",
       "Project showcase"
     ],
     tags: ["React", "Framer Motion", "Three.js", "Tailwind"],
     category: "web",
-    github: "https://github.com/iman-mandal/portfolio",
+    github: "https://github.com/iman-mandal/Portfolio",
     live: "https://iman-mandal.dev",
     linkedin: "cyihjoiuyc/hc",
     featured: true,
     stats: {
       githubStars: 0,
       forks: 0,
-      date: "2024"
+      date: "Apr-2026"
     }
   }
 ]

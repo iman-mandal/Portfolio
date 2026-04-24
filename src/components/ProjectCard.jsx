@@ -101,7 +101,7 @@ export default function ProjectCard({ project, index = 0 }) {
 
       {/* Featured Badge */}
       {project.featured && (
-        <div className="absolute top-4 left-4 z-20">
+        <div className="absolute top-2 left-4 z-20">
           <div className="flex items-center gap-1 rounded-full bg-amber-500/20 px-2 py-1 backdrop-blur-sm">
             <Star className="h-3 w-3 text-amber-400 animate-pulse" />
             <span className="text-[10px] font-medium text-amber-300">Featured</span>
