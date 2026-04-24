@@ -36,7 +36,7 @@ export const projects = [
     tags: ["React", "Framer Motion", "Three.js", "Tailwind"],
     category: "web",
     github: "https://github.com/iman-mandal/Portfolio",
-    live: "https://iman-mandal.dev",
+    live: "https://iman-mandal.github.io/Portfolio/",
     linkedin: "cyihjoiuyc/hc",
     featured: true,
     stats: {
