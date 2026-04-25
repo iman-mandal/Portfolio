@@ -1,7 +1,5 @@
-'use client'
-
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
-import { Github, Linkedin, Mail, Menu, X, Sparkles, Home, User, Briefcase, Code2, Clock, MessageCircle } from 'lucide-react'
+import { Github, Linkedin, Mail, Menu, X, Sparkles, Home, User,FileText, Briefcase, Code2, Clock, MessageCircle } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const navLinks = [
@@ -137,6 +135,17 @@ export default function Navbar({ activeSection }) {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <Code2 size={18} />
+                            </motion.a>
+                            <motion.a
+                                href="https://drive.google.com/file/d/1FPmZLkn2fmxub--cw2ok9nmtEO2-6PL5/view?usp=drivesdk"  
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download
+                                className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-300 transition-all duration-300 hover:scale-110 hover:border-emerald-400/50 hover:bg-emerald-500/10 hover:text-emerald-300"
+                                whileHover={{ y: -2 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <FileText size={18} />
                             </motion.a>
                         </div>
 

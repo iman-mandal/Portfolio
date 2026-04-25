@@ -1,4 +1,4 @@
-import { Code2, Layers, Sparkles, Mail, Github, Linkedin, Award, Coffee, Heart, Zap, Globe, Camera, Music, Star, Orbit, Rocket, Moon, Sun, Compass } from 'lucide-react'
+import { Code2, Layers, Sparkles, Mail, Github, Linkedin, Award, Coffee, Heart, Zap, Globe, Camera, Music, Star, Orbit, Rocket, Moon, Sun, FileText, Compass } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState, useEffect, useMemo } from 'react'
 import profilePhoto from '../image/IMG_20240612_191519.jpg.jpeg'
@@ -91,9 +91,17 @@ const SOCIAL_LINKS = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/iman-mandal-5945102b9", label: "LinkedIn", bg: "from-violet-500/20 to-purple-500/20", borderHover: 'group-hover:border-violet-400/50', textHover: 'group-hover:text-violet-300' },
     { icon: Mail, href: "mailto:mandalim19@gmail.com", label: "Email", bg: "from-fuchsia-500/20 to-pink-500/20", borderHover: 'group-hover:border-fuchsia-400/50', textHover: 'group-hover:text-fuchsia-300' },
     { icon: Code2, href: "https://leetcode.com/u/iman6406/", label: "LeetCode", bg: "from-amber-500/20 to-yellow-500/20", borderHover: 'group-hover:border-amber-400/50', textHover: 'group-hover:text-amber-300' },
+    {
+    icon: FileText,
+    href: "https://drive.google.com/file/d/1FPmZLkn2fmxub--cw2ok9nmtEO2-6PL5/view?usp=drivesdk",
+    label: "Resume",
+    bg: "from-emerald-500/20 to-green-500/20",
+    borderHover: "group-hover:border-emerald-400/50",
+    textHover: "group-hover:text-emerald-300",
+  },
 ]
 const STATS_DATA = [
-    { value: "1+", label: "Years Experience", color: "cyan" },
+    { value: "Fresher", label: "Experience Level", color: "cyan" },
     { value: "5+", label: "Projects", color: "violet" },
     { value: "30+", label: "DSA questions solved", color: "amber" },
     { value: "3+", label: "Technologies Learned", color: "fuchsia" },

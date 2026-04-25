@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Sparkles, Rocket, ChevronDown, Star, Orbit } from 'lucide-react'
+import { ArrowRight, Sparkles, Rocket, ChevronDown, FileText, Star, Orbit } from 'lucide-react'
 import { useRef, useState, useEffect, lazy, Suspense } from 'react'
 import useTypingText from '../hooks/useTypingText'
 
@@ -65,8 +65,8 @@ export default function Hero() {
   }
 
   return (
-    <div 
-      ref={containerRef} 
+    <div
+      ref={containerRef}
       className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 shadow-glow backdrop-blur-2xl lg:flex lg:items-center lg:justify-between lg:p-10 min-h-[600px] lg:min-h-[700px]"
     >
       {/* 3D Solar System Scene */}
@@ -99,10 +99,10 @@ export default function Hero() {
       <div style={{ y, opacity }} className="absolute inset-0" />
 
       {/* Content */}
-      <motion.div 
-        variants={containerVariants} 
-        initial="hidden" 
-        animate="visible" 
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
         className="relative z-10 max-w-2xl space-y-6 lg:w-1/2"
       >
         <motion.div variants={itemVariants} className="inline-flex">
@@ -124,7 +124,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="max-w-xl text-slate-300 sm:text-lg leading-relaxed">
-          CSE Student & MERN Stack Developer building immersive applications with elegant interactions, 
+          CSE Student & MERN Stack Developer building immersive applications with elegant interactions,
           beautiful visuals, and cosmic creativity.
         </motion.p>
 
@@ -141,7 +141,8 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
+        <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4">
+
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.05, y: -2 }}
@@ -153,10 +154,25 @@ export default function Hero() {
             }}
           >
             <Rocket size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-            Explore Universe
+            Explore Projects
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
           </motion.a>
 
+          {/* 📄 Resume CTA (VERY IMPORTANT FOR RECRUITERS) */}
+          <motion.a
+            href="https://drive.google.com/file/d/1FPmZLkn2fmxub--cw2ok9nmtEO2-6PL5/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all duration-300 hover:shadow-emerald-500/50"
+          >
+            <FileText size={18} className="transition-transform duration-300 group-hover:-translate-y-1" />
+            Download Resume
+          </motion.a>
+
+          {/* 📬 Contact */}
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.05, y: -2 }}
@@ -170,11 +186,12 @@ export default function Hero() {
             <Orbit size={18} className="mr-2" />
             Contact Me
           </motion.a>
+
         </motion.div>
 
-        <motion.div 
-          variants={itemVariants} 
-          className="absolute -bottom-16 left-1/2 hidden -translate-x-1/2 cursor-pointer lg:block" 
+        <motion.div
+          variants={itemVariants}
+          className="absolute -bottom-16 left-1/2 hidden -translate-x-1/2 cursor-pointer lg:block"
           onClick={scrollToNext}
         >
           <div className="flex flex-col items-center gap-1 text-xs text-slate-400">
@@ -198,9 +215,11 @@ export default function Hero() {
       >
         <div className="space-y-2 text-center">
           <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
-            1+
+            Fresher
           </div>
-          <p className="text-xs text-slate-400">Years of<br />Experience</p>
+          <p className="text-xs text-slate-400">
+            Experience Level
+          </p>
         </div>
       </motion.div>
     </div>
