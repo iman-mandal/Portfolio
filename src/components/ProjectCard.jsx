@@ -132,10 +132,10 @@ export default function ProjectCard({ project, index = 0 }) {
         {/* Key Features */}
         {project.features && project.features.length > 0 && (
           <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wider text-cyan-400 flex items-center gap-2">
+            <div className="text-xs font-semibold uppercase tracking-wider text-cyan-400 flex items-center gap-2">
               <div className={`h-px w-4 bg-gradient-to-r ${config.glow}`} />
               Key Features
-            </p>
+            </div>
             <ul className="grid gap-1.5 sm:grid-cols-2">
               {project.features?.slice(0, 4).map((feature, i) => (
                 <motion.li

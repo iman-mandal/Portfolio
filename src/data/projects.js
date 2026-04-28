@@ -37,7 +37,7 @@ export const projects = [
     category: "web",
     github: "https://github.com/iman-mandal/Portfolio",
     live: "https://iman-mandal.github.io/Portfolio/",
-    linkedin: "cyihjoiuyc/hc",
+    linkedin: "",
     featured: true,
     stats: {
       githubStars: 0,

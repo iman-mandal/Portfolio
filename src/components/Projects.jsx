@@ -86,7 +86,7 @@ export default function Projects() {
       {/* Projects */}
       <motion.div
         layout
-        className={`gap-6 ${
+        className={`relative gap-6 ${
           viewMode === 'grid'
             ? 'grid md:grid-cols-2'
             : 'flex flex-col'

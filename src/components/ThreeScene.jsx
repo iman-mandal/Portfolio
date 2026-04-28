@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, memo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import {
   Sphere,
@@ -109,10 +109,25 @@ function Planet({ size, color, distance, speed, hasRing = false, ringColor = "#8
 }
 
 // Main Scene
-export default function ThreeScene() {
+function ThreeScene() {
+  const rendererRef = useRef(null)
+
+  useEffect(() => {
+    return () => {
+      const gl = rendererRef.current
+      if (gl) {
+        gl.forceContextLoss?.()
+        gl.dispose?.()
+      }
+    }
+  }, [])
+
   return (
     <div className="absolute inset-0 -z-5 w-full h-full">
       <Canvas
+        onCreated={({ gl }) => {
+          rendererRef.current = gl
+        }}
         camera={{ position: [0, 2, 12], fov: 60 }}
         gl={{ antialias: true, alpha: true }}
       >
@@ -150,3 +165,5 @@ export default function ThreeScene() {
     </div>
   )
 }
+
+export default memo(ThreeScene)
