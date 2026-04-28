@@ -34,33 +34,35 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const templateParams = {
-      from_email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
+    const formBody = new FormData();
+    formBody.append("email", formData.email);
+    formBody.append("subject", formData.subject);
+    formBody.append("message", formData.message);
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbxsLFG_B-_Lkyi3-YFR7Y0nI75dJJBQcVuoa9GpAtjqOws0rm5AEoRywkYJZQrevW3nvQ/exec", {
+        method: "POST",
+        body: formBody,
+        mode: "no-cors",
+      });
+
+      alert("Message sent successfully 🚀");
+
+      setFormData({
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message ❌");
     }
+  };
 
-    emailjs
-      .send(
-        'YOUR_SERVICE_ID',   // 🔴 replace
-        'YOUR_TEMPLATE_ID',  // 🔴 replace
-        templateParams,
-        'YOUR_PUBLIC_KEY'    // 🔴 replace
-      )
-      .then(
-        () => {
-          alert(' Message sent successfully!')
-          setFormData({ email: '', subject: '', message: '' })
-        },
-        (error) => {
-          console.error(error)
-          alert('Failed to send message. Try again.')
-        }
-      )
-  }
 
   return (
     <motion.section
@@ -142,7 +144,6 @@ export default function Contact() {
           <button type="submit" className="relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-violet-500 to-cyan-500 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:shadow-glow hover:shadow-cyan-500/25">
             <span className="relative z-10 flex items-center justify-center gap-2"><Send className="h-4 w-4" /> Send Message</span>
           </button>
-          <p className="text-center text-xs text-slate-500">📧 Opens your email client • No backend required</p>
         </motion.form>
       </div>
     </motion.section>
