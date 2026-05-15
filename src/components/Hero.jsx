@@ -12,7 +12,6 @@ const roles = [
   'Data Structures & Algorithms Enthusiast',
   'Problem Solver',
   'Competitive Programming Learner',
-  'Space Explorer'
 ]
 
 export default function Hero() {

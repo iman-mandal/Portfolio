@@ -1,7 +1,7 @@
-import { Code2, Layers, Sparkles, Mail, Github, Linkedin, Award, Coffee, Heart, Zap, Globe, Camera, Music, Star, Orbit, Rocket, Moon, Sun, FileText, Compass } from 'lucide-react'
+import { Code2, Layers, Sparkles, Mail, Github, Linkedin, Award, Coffee, Heart, Zap, Globe, Camera, Music, Star, Orbit, Rocket, Moon, Sun, FileText, Compass, GamepadIcon, PlayIcon, FilmIcon, HeadphonesIcon, ImagePlayIcon, LucideGamepad2, TrophyIcon } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState, useEffect, useMemo } from 'react'
-import profilePhoto from '../image/IMG_20240612_191519.jpg.jpeg'
+import profilePhoto from '../image/IMG_20240612_191519.png'
 // Memoized static data
 const COLOR_STYLES = {
     cyan: {
@@ -78,12 +78,13 @@ const FUN_FACTS = [
 ]
 
 const INTERESTS = [
-    { icon: Camera, name: "Photography", color: "cyan", description: "Capturing moments" },
     { icon: Music, name: "Music", color: "violet", description: "Creating vibes" },
-    { icon: Globe, name: "Travel", color: "fuchsia", description: "Exploring world" },
     { icon: Coffee, name: "Coffee", color: "amber", description: "Fueling code" },
-    { icon: Star, name: "Astronomy", color: "cyan", description: "Stargazing" },
     { icon: Compass, name: "Adventure", color: "violet", description: "Seeking thrill" },
+    { icon: TrophyIcon, name: "Cricket", color: "green", description: "Playing & watching cricket" },
+    { icon: FilmIcon, name: "Movies", color: "rose", description: "Watching movies" },
+    { icon: LucideGamepad2, name: "Games", color: "cyan", description: "Video gaming sessions" },
+    { icon: HeadphonesIcon, name: "Audiobooks", color: "emerald", description: "Listening to audiobooks" },
 ]
 
 const SOCIAL_LINKS = [
@@ -267,7 +268,7 @@ export default function About() {
                         <div className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-violet-500/20 px-5 py-2 backdrop-blur-sm border border-white/10">
                             <Orbit className="h-4 w-4 text-cyan-300 animate-spin-slow" />
                             <span className="text-xs font-mono uppercase tracking-wider text-cyan-300">
-                                Cosmic Developer
+                                Full Stack Enthusiast
                             </span>
                             <Star className="h-3 w-3 text-amber-400 animate-pulse" />
                         </div>
